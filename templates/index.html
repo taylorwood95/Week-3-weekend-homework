@@ -3,11 +3,11 @@
 <html>
 
 <head>
-    <title>{{ title }} - Book List  </title>
+    <title>{{ title }} - Book List </title>
 </head>
 <header>
     <h2> Book List </h2>
-</header>   
+</header>
 
 <body>
 
@@ -26,6 +26,9 @@
         <label for="genre">Genre:</label>
         <input type="text" name="genre" id="genre">
 
+        <label for="checked_out"> Checked Out:</label>
+        <input type="text" name="checked_out" id="checked_out">
+
 
         <input class="add_book" type="submit" value="add book">
     </form>
@@ -42,6 +45,10 @@
         <label for="genre">Genre:</label>
         <input type="text" name="genre" id="genre">
 
+        <label for="checked_out"> Checked Out:</label>
+        <input type="text" name="checked_out" id="checked_out">
+
+
 
         <input class="remove_book" type="submit" value="remove book">
     </form>
@@ -52,7 +59,7 @@
         {% for book in books %}
 
         <p>
-            {{ book.title }} - {{ book.author }} - {{ book.genre }}
+            {{ book.title }} - {{ book.author }} - {{ book.genre }} - {{book.checked_out }}
         </p>
         <a class="white" href="/">More Info</a>
 
