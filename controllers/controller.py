@@ -14,8 +14,9 @@ def add_book():
     title = request.form["title"]
     author = request.form["author"]
     genre = request.form["genre"]
+    checked_out = request.form["checked_out"]
 
-    new_book = Book(title, author, genre)
+    new_book = Book(title, author, genre, checked_out)
 
     add_new_book(new_book)
     return render_template("index.html", title="Home", books=books)
@@ -27,8 +28,9 @@ def remove_book_list():
     title = request.form["title"]
     author = request.form["author"]
     genre = request.form["genre"]
+    checked_out = request.form["checked_out"]
 
-    remove_books = Book(title, author, genre)
+    remove_books = Book(title, author, genre, checked_out)
     remove_book(remove_books)
 
     return render_template("index.html", title="Home", books=books)
