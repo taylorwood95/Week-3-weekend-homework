@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<html>
+
+<head>
+    <title>{{ title }} - Book List  </title>
+</head>
+<header>
+    <h2> Book List </h2>
+</header>   
+
+<body>
+
+
+
+
+    <form action="/add_book" method="post">
+
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title">
+
+
+        <label for="author">Author:</label>
+        <input type="text" name="author" id="author">
+
+        <label for="genre">Genre:</label>
+        <input type="text" name="genre" id="genre">
+
+
+        <input class="add_book" type="submit" value="add book">
+    </form>
+
+    <form action="/remove_book" method="post">
+
+        <label for=" title">Title:</label>
+        <input type="text" name="title" id="title">
+
+
+        <label for="author">Author:</label>
+        <input type="text" name="author" id="author">
+
+        <label for="genre">Genre:</label>
+        <input type="text" name="genre" id="genre">
+
+
+        <input class="remove_book" type="submit" value="remove book">
+    </form>
+
+    <p> Books: </p>
+    <b>
+
+        {% for book in books %}
+
+        <p>
+            {{ book.title }} - {{ book.author }} - {{ book.genre }}
+        </p>
+        <a class="white" href="/">More Info</a>
+
+
+
+        {% endfor %}
+    </b>
+
+</body>
